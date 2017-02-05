@@ -11,14 +11,9 @@
         <link rel="stylesheet" href="resources/musicshop/css/default.css"/>
     </h:head>
     <h:body>
-        <header>
-            <h1>Welcome to the JSF Music Shop</h1>
-        </header>
+        <ui:include src="/templates/page-header.xhtml"/>
         <ui:insert name="panel-top">
-            <section>
-                <h1>Welcome, visitor!</h1>
-                <p>Your <h:outputLink value="shopping-cart.xhtml">shopping cart</h:outputLink> is empty.</p>
-            </section>
+            <ui:include src="/templates/panel-top-default.xhtml"/>
         </ui:insert>
         <ui:insert name="panel-main">
             <section>
@@ -26,9 +21,7 @@
                 <p>Placeholder text.</p>
             </section>
         </ui:insert>
-        <footer>
-            <p>Thanks for visiting!</p>
-        </footer>
+        <ui:include src="/templates/page-footer.xhtml"/>
     </h:body>
 </f:view>
 </html>
