@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ps-jsf-01-facelets:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="musicshop.war">
+      <element id="artifact" artifact-name="ps-jsf-01-facelets:war exploded" />
+    </root>
+  </artifact>
+</component>
