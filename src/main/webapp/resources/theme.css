@@ -1,24 +1,24 @@
 body {
-    background-color: #303030;
+    background-color: #e5e5e5;
 }
 
 a:link, a:visited {
-    color: #9bc850;
+    color: #1f778d;
 }
 
 a:hover, a:active {
-    color: #c3de96;
+    color: #76cbe0;
 }
 
 input {
-    background-color: #808080;
-    color: white;
-    border: 1px solid black;
+    background-color: white;
+    color: black;
+    border: 1px solid #808080;
     padding: 0.25em;
 }
 
 input[readonly] {
-    color: #c0c0c0;
+    color: #808080;
 }
 
 input[type="submit"], input[type="button"] {
@@ -27,38 +27,38 @@ input[type="submit"], input[type="button"] {
 }
 
 body > header {
-    background-color: #c43b0e;
-    color: #e5e5e5;
-}
-
-body > section {
-    background-color: #606060;
+    background-color: #f15b2a;
     color: white;
 }
 
+body > section {
+    background-color: white;
+    color: black;
+}
+
 body > footer {
-    background-color: #1f778d;
+    background-color: #2a9fbc;
     color: #e5e5e5;
 }
 
 .shoppingcart-header {
-    background-color: #c43b0e;
+    background-color: #f15b2a;
     color: white;
 }
 
 .shoppingcart-row-odd {
-    background-color: #505050;
+    background-color: #e0e0e0;
 }
 
 .shoppingcart-row-even {
-    background-color: #585858;
+    background-color: #f0f0f0;
 }
 
 .shoppingcart-footer {
-    background-color: #1f778d;
+    background-color: #2a9fbc;
     color: white;
 }
 
 .validation-messages {
-    color: yellow;
+    color: red;
 }
