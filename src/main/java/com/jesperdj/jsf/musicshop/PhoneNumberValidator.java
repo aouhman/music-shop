@@ -7,7 +7,7 @@ import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 import java.util.regex.Pattern;
-
+//validation bean est une autre API  standard JEE pour la validation des champs de java Bean
 @FacesValidator("com.jesperdj.jsf.PhoneNumber")
 public class PhoneNumberValidator implements Validator {
 
