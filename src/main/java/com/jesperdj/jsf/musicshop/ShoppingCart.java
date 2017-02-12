@@ -1,5 +1,8 @@
 package com.jesperdj.jsf.musicshop;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -11,6 +14,7 @@ import java.util.List;
 @Named
 @SessionScoped
 public class ShoppingCart implements Serializable {
+    private static final Logger LOG = LoggerFactory.getLogger(ShoppingCart.class);
 
     private static final long serialVersionUID = 1L;
 
@@ -33,6 +37,8 @@ public class ShoppingCart implements Serializable {
     }
 
     public void addProduct(Product product) {
+        LOG.debug("Adding product: {}", product);
+
         // Find the line for this product, increment quantity and amount if found
         for (ShoppingCartLine line : lines) {
             if (line.getProduct().getId() == product.getId()) {
@@ -48,6 +54,8 @@ public class ShoppingCart implements Serializable {
     }
 
     public void removeProduct(Product product) {
+        LOG.debug("Removing product: {}", product);
+
         Iterator<ShoppingCartLine> it = lines.iterator();
         while (it.hasNext()) {
             ShoppingCartLine line = it.next();

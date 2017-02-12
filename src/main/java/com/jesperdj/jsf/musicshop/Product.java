@@ -49,4 +49,9 @@ public final class Product implements Serializable {
     public String getImageName() {
         return imageName;
     }
+
+    @Override
+    public String toString() {
+        return "[" + id + "] " + name;
+    }
 }

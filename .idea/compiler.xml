@@ -22,10 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="musicshop" />
         <module name="ps-jsf-01-facelets" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="musicshop" target="1.8" />
       <module name="ps-jsf-01-facelets" target="1.8" />
     </bytecodeTargetLevel>
   </component>
