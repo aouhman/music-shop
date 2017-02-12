@@ -31,24 +31,21 @@ public class UserManager implements Serializable {
         if (user == null || !password.equals(user.getPassword())) {
             FacesContext.getCurrentInstance().addMessage(null,
                     new FacesMessage("Please enter a valid username and password."));
-            return "sign-in";
+            return "failure";
         }
 
         currentUser = user;
-        return "index";
+        return "success";
     }
 
-    public String signOut() {
+    public void signOut() {
         // End the session, removing any session state, including the current user and content of the shopping cart
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-
-        // Redirect is necessary to let the browser make a new GET request
-        return "index?faces-redirect=true";
     }
 
     public String save(User user) {
         userService.saveUser(user);
         currentUser = user;
-        return "index";
+        return "home";
     }
 }

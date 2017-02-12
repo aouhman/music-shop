@@ -10,11 +10,16 @@ a:hover, a:active {
     color: #c3de96;
 }
 
-input {
+input, select {
     background-color: #808080;
     color: white;
     border: 1px solid black;
     padding: 0.25em;
+}
+
+option {
+    background-color: #808080;
+    color: white;
 }
 
 input[readonly] {

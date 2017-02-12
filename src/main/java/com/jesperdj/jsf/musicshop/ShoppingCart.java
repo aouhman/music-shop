@@ -72,6 +72,12 @@ public class ShoppingCart implements Serializable {
         }
     }
 
+    public void empty() {
+        lines.clear();
+        totalQuantity = 0;
+        totalAmount = BigDecimal.ZERO;
+    }
+
     private void incrementTotalQuantityAndAmount(BigDecimal productPrice) {
         totalQuantity++;
         totalAmount = totalAmount.add(productPrice);

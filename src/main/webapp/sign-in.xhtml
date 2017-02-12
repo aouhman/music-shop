@@ -18,39 +18,29 @@
                     <h:form>
                         <h1>Welcome, #{userManager.currentUser.firstName}!</h1>
                         <p>You are already signed in.
-                            Do you want to<h:commandLink action="#{userManager.signOut}">sign out</h:commandLink>?</p>
+                            Do you want to <h:commandLink action="#{userManager.signOut}">sign out</h:commandLink>?</p>
                     </h:form>
                 </ui:fragment>
 
-                <p><h:outputLink value="index.xhtml">Back to Popular Products</h:outputLink></p>
+                <p><h:link value="Back to Popular Products" outcome="home"/></p>
             </section>
         </ui:define>
         <ui:define name="panel-main">
             <ui:fragment rendered="#{not userManager.signedIn}">
                 <section>
                     <h:messages styleClass="validation-messages"/>
-                    <h:form id="signInForm">
+                    <h:form>
                         <h:panelGrid columns="2" styleClass="form-grid"
                                      columnClasses="form-column-label,form-column-input">
                             <h:outputLabel for="username">Username</h:outputLabel>
-                            <h:inputText id="username" value="#{signIn.username}" size="20"
-                                         valueChangeListener="#{loggingEventHandlers.valueChanged}">
-                                <f:event type="preValidate" listener="#{loggingEventHandlers.beforeValidation}"/>
-                                <f:event type="postValidate" listener="#{loggingEventHandlers.afterValidation}"/>
-                            </h:inputText>
+                            <h:inputText id="username" value="#{signIn.username}" size="20"/>
 
                             <h:outputLabel for="password">Password</h:outputLabel>
-                            <h:inputSecret id="password" value="#{signIn.password}" size="20">
-                                <f:event type="preValidate" listener="#{loggingEventHandlers.beforeValidation}"/>
-                                <f:event type="postValidate" listener="#{loggingEventHandlers.afterValidation}"/>
-                            </h:inputSecret>
+                            <h:inputSecret id="password" value="#{signIn.password}" size="20"/>
 
                             <h:outputText value=""/>
-                            <h:commandButton id="submit" value="Submit" action="#{signIn.submit}"
-                                             actionListener="#{loggingEventHandlers.actionPerformed}"/>
+                            <h:commandButton value="Submit" action="#{signIn.submit}"/>
                         </h:panelGrid>
-                        <f:event type="postAddToView" listener="#{loggingEventHandlers.addedToView}"/>
-                        <f:event type="preRenderComponent" listener="#{loggingEventHandlers.beforeRenderComponent}"/>
                     </h:form>
                 </section>
             </ui:fragment>

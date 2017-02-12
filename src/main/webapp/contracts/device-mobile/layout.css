@@ -19,7 +19,7 @@ p {
     padding: 0;
 }
 
-input, button {
+input, button, select {
     font-family: Arial, sans-serif;
     font-size: 100%;
 }
@@ -110,4 +110,10 @@ ul.validation-messages li {
 
 .form-column-input {
     width: 100%;
+}
+
+.button-right {
+    margin-top: 1em;
+    float: right;
+    clear: both;
 }

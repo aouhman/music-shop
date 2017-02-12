@@ -22,10 +22,9 @@
                         <h:outputText value="#{productDetails.product.price}">
                             <f:convertNumber type="currency" currencySymbol="$"/>
                         </h:outputText>
-                        - <h:commandLink
-                                action="#{shoppingCart.addProduct(productDetails.product)}">Add to cart</h:commandLink>
+                        - <h:commandLink action="#{shoppingCart.addProduct(productDetails.product)}">Add to cart</h:commandLink>
                     </p>
-                    <p><h:outputLink value="index.xhtml">Back to Popular Products</h:outputLink></p>
+                    <p><h:link value="Back to Popular Products" outcome="home"/></p>
                 </h:form>
             </section>
         </ui:define>
