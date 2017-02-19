@@ -41,8 +41,12 @@ public class PhoneNumberConverter implements Converter {
 
     @Override
     public String getAsString(FacesContext context, UIComponent component, Object value) {
-        LOG.debug("getAsString: [{}]", value);
+        if (value == null) {
+            return null;
+        }
 
-        return Objects.toString(value);
+        PhoneNumber phoneNumber = (PhoneNumber) value;
+
+        return phoneNumber.getAreaCode() + "-" + phoneNumber.getOfficeCode() + "-" + phoneNumber.getSubscriberNumber();
     }
 }
