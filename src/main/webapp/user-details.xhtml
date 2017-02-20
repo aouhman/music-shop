@@ -20,12 +20,14 @@
         </ui:define>
         <ui:define name="panel-main">
             <section>
-                <h:messages styleClass="validation-messages"/>
+                <h:messages id="validation-messages" styleClass="validation-messages"/>
                 <h:form>
                     <h:panelGrid columns="2" styleClass="form-grid" columnClasses="form-column-label,form-column-input">
                         <h:outputLabel for="username">Username</h:outputLabel>
                         <h:inputText id="username" value="#{userDetails.user.username}" size="20"
-                                     readonly="#{userManager.signedIn}"/>
+                                     readonly="#{userManager.signedIn}">
+                            <f:ajax event="blur" execute="@this" render="validation-messages"/>
+                        </h:inputText>
 
                         <h:outputLabel for="password">Password</h:outputLabel>
                         <h:inputSecret id="password" value="#{userDetails.user.password}" size="20"/>
